@@ -1,16 +1,19 @@
-INSERT MANDATORY GIF
+<img src="https://media4.giphy.com/media/ArVhgElNEc42Q/giphy.gif?cid=ecf05e47n3mzafao2rtng7900jihcj6xoyndx1yj7if2vufh&rid=giphy.gif&ct=g" widt="100%">
 
-# Project Title
+# Guess who
 
-Text about the project and which JavaScript library you're using. This would also be a great place to link the game on Netlify.
+A modern take on the classic "Guess who".
+Written in TypeScript and Pixi.
 
 # Installation
 
-Add the installation instructions.
+1. Clone the repo
+2. Run 'npm install' in the root folder
+3. Start a localhost by running 'npm run dev'
 
 # Changelog
 
--   [#1 - Add a link to each pull request with a descriptive line.](#1)
+-   [#1 - Add Vite and some boiler stuff.](https://github.com/chrs-m/guess-who/pull/1)
 
 # Code Review
 
