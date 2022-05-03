@@ -13,7 +13,7 @@ Written in TypeScript and Pixi.
 
 # Changelog
 
--   [#1 - Add a link to each pull request with a descriptive line.](#1)
+-   [#1 - Add Vite and some boiler stuff.](https://github.com/chrs-m/guess-who/pull/1)
 
 # Code Review
 
