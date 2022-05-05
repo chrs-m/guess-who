@@ -47,9 +47,19 @@ const gap = 48;
 for (let x = 0; x < 6; x++) {
   for (let y = 0; y < 4; y++) {
     const texture = PIXI.Sprite.from(card);
+    texture.interactive = true;
+    texture.buttonMode = true;
+    let isChecked = false;
 
     texture.position.x = x * boxWidth + x * gap;
     texture.position.y = y * boxHeight + y * gap;
     app.stage.addChild(texture);
+
+    texture.on('click', () => {
+      isChecked = !isChecked;
+      texture.filters = isChecked
+        ? (texture.filters = null)
+        : [new PIXI.filters.BlurFilter()];
+    });
   }
 }
