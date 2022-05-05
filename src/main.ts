@@ -1,4 +1,6 @@
 import * as PIXI from 'pixi.js';
+import card from './assets/img/Character_card.png';
+
 const graphics = new PIXI.Graphics();
 
 var app = new PIXI.Application({
@@ -39,31 +41,15 @@ myText.style.wordWrap = true;
 myText.style.wordWrapWidth = 400;
 myText.style.align = 'center';
 
-const cardTexture = PIXI.Texture.from('./assets/img/Character_card.png');
-const cardSprite = new PIXI.TilingSprite(
-  cardTexture,
-  app.screen.width,
-  app.screen.height
-);
-
-cardSprite.tileScale.set(0.5, 0.5);
-app.stage.addChild(cardSprite);
-
 const boxWidth = 100;
-const boxHight = 120;
+const boxHeight = 120;
 const gap = 48;
 for (let x = 0; x < 6; x++) {
   for (let y = 0; y < 4; y++) {
-    graphics.beginFill(0xde3249);
-    graphics.drawRoundedRect(
-      x * boxWidth + x * gap,
-      y * boxHight + y * gap,
-      100,
-      120,
-      8
-    );
-    graphics.endFill();
-  }
+    const texture = PIXI.Sprite.from(card);
 
-  app.stage.addChild(graphics);
+    texture.position.x = x * boxWidth + x * gap;
+    texture.position.y = y * boxHeight + y * gap;
+    app.stage.addChild(texture);
+  }
 }
