@@ -13,6 +13,7 @@ Written in TypeScript and Pixi.
 
 # Changelog
 
+-   [#3 - Add initial clickevent on cards.](https://github.com/chrs-m/guess-who/pull/3)
 -   [#1 - Add Vite and some boiler stuff.](https://github.com/chrs-m/guess-who/pull/1)
 
 # Code Review
