@@ -1,7 +1,7 @@
 import * as PIXI from 'pixi.js';
-import card from './assets/img/Character_card.png';
+import { Spritesheet } from 'pixi.js';
 
-const graphics = new PIXI.Graphics();
+let sheet: Spritesheet | undefined;
 
 var app = new PIXI.Application({
   antialias: true,
@@ -10,6 +10,13 @@ var app = new PIXI.Application({
   backgroundColor: 0x2c3e50,
 });
 document.body.appendChild(app.view);
+
+const loader = app.loader.add('./assets/pack-result/texture.json').load(setup);
+loader.onComplete.add(spritesLoaded);
+
+function setup() {
+  sheet = loader.resources['./assets/pack-result/texture.json'].spritesheet;
+}
 
 const style = new PIXI.TextStyle({
   fontFamily: 'Montserrat',
@@ -41,15 +48,26 @@ myText.style.wordWrap = true;
 myText.style.wordWrapWidth = 400;
 myText.style.align = 'center';
 
-const boxWidth = 100;
-const boxHeight = 120;
-const gap = 48;
-for (let x = 0; x < 6; x++) {
-  for (let y = 0; y < 4; y++) {
-    const texture = PIXI.Sprite.from(card);
+let imgIndex = 0;
 
-    texture.position.x = x * boxWidth + x * gap;
-    texture.position.y = y * boxHeight + y * gap;
-    app.stage.addChild(texture);
+function spritesLoaded() {
+  const boxWidth = 100;
+  const boxHeight = 120;
+  const gap = 48;
+  let textures;
+  if (sheet) {
+    textures = Object.values(sheet.textures);
+  }
+  for (let x = 0; x < 7; x++) {
+    for (let y = 0; y < 3; y++) {
+      if (textures) {
+        const texture = PIXI.Sprite.from(textures[imgIndex]);
+
+        texture.position.x = x * boxWidth + x * gap;
+        texture.position.y = y * boxHeight + y * gap;
+        app.stage.addChild(texture);
+      }
+      imgIndex++;
+    }
   }
 }
