@@ -48,6 +48,7 @@ myText.style.wordWrap = true;
 myText.style.wordWrapWidth = 400;
 myText.style.align = 'center';
 
+
 let imgIndex = 0;
 
 function spritesLoaded() {
@@ -62,10 +63,20 @@ function spritesLoaded() {
     for (let y = 0; y < 3; y++) {
       if (textures) {
         const texture = PIXI.Sprite.from(textures[imgIndex]);
+            texture.interactive = true;
+    texture.buttonMode = true;
+    let isChecked = false;
 
         texture.position.x = x * boxWidth + x * gap;
         texture.position.y = y * boxHeight + y * gap;
         app.stage.addChild(texture);
+        
+        texture.on('click', () => {
+      isChecked = !isChecked;
+      texture.filters = isChecked
+        ? (texture.filters = null)
+        : [new PIXI.filters.BlurFilter()];
+    });
       }
       imgIndex++;
     }
