@@ -13,6 +13,7 @@ Written in TypeScript and Pixi.
 
 # Changelog
 
+-   [#2 - Displaying characters.](https://github.com/chrs-m/guess-who/pull/1)
 -   [#1 - Add Vite and some boiler stuff.](https://github.com/chrs-m/guess-who/pull/1)
 
 # Code Review
