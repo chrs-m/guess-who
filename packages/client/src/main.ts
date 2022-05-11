@@ -1,13 +1,15 @@
 import * as PIXI from 'pixi.js';
 import { Spritesheet } from 'pixi.js';
 
+import nameArray from './charNames';
+
 let sheet: Spritesheet | undefined;
 
 var app = new PIXI.Application({
   antialias: true,
   width: window.innerWidth,
   height: window.innerHeight,
-  backgroundColor: 0x2c3e50,
+  backgroundColor: 0xffffff,
 });
 document.body.appendChild(app.view);
 
@@ -19,15 +21,15 @@ function setup() {
 }
 
 const style = new PIXI.TextStyle({
-  fontFamily: 'Montserrat',
-  fontSize: 48,
-  fill: 'deepskyblue',
-  stroke: '#ffffff',
-  strokeThickness: 4,
+  fontFamily: 'Didact Gothic',
+  fontSize: 64,
+  fill: 'skyblue',
+  stroke: '#000',
+  strokeThickness: 1,
   dropShadow: true,
-  dropShadowDistance: 10,
+  dropShadowDistance: 3,
   dropShadowAngle: Math.PI / 2,
-  dropShadowBlur: 4,
+  dropShadowBlur: 5,
   dropShadowColor: '#000000',
 });
 
@@ -49,22 +51,35 @@ myText.style.wordWrapWidth = 400;
 myText.style.align = 'center';
 
 let imgIndex = 0;
-
 function spritesLoaded() {
-  const boxWidth = 100;
-  const boxHeight = 120;
+  const boxWidth = 120;
+  const boxHeight = 150;
   const gap = 48;
+
   let textures;
+
   if (sheet) {
     textures = Object.values(sheet.textures);
   }
   for (let x = 0; x < 7; x++) {
     for (let y = 0; y < 3; y++) {
       if (textures) {
+        let text = new PIXI.Text(nameArray[imgIndex], {
+          fontFamily: 'Arial',
+          fontSize: 24,
+          fill: 0x000,
+          align: 'center',
+        });
+
         const texture = PIXI.Sprite.from(textures[imgIndex]);
         texture.interactive = true;
         texture.buttonMode = true;
+
         let isChecked = false;
+
+        text.position.x = x * boxWidth + x + 1 * 50;
+        text.position.y = y * boxHeight + y + 1 * 20;
+        app.stage.addChild(text);
 
         texture.position.x = x * boxWidth + x + 1 * gap;
         texture.position.y = y * boxHeight + y + 1 * gap;
@@ -73,7 +88,7 @@ function spritesLoaded() {
         texture.on('click', () => {
           isChecked = !isChecked;
           texture.filters = isChecked
-            ? [new PIXI.filters.BlurFilter()]
+            ? [new PIXI.filters.BlurFilter(8, 10)]
             : (texture.filters = null);
         });
       }

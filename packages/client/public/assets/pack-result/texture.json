@@ -74,8 +74,8 @@
     },
     "fabien.png": {
       "frame": {
-        "x": 0,
-        "y": 342,
+        "x": 90,
+        "y": 0,
         "w": 90,
         "h": 114
       },
@@ -98,8 +98,8 @@
     },
     "frank.png": {
       "frame": {
-        "x": 0,
-        "y": 456,
+        "x": 90,
+        "y": 114,
         "w": 90,
         "h": 114
       },
@@ -122,8 +122,8 @@
     },
     "georg.png": {
       "frame": {
-        "x": 0,
-        "y": 570,
+        "x": 90,
+        "y": 228,
         "w": 90,
         "h": 114
       },
@@ -146,8 +146,8 @@
     },
     "hanna.png": {
       "frame": {
-        "x": 0,
-        "y": 684,
+        "x": 180,
+        "y": 0,
         "w": 90,
         "h": 114
       },
@@ -170,12 +170,12 @@
     },
     "hans.png": {
       "frame": {
-        "x": 90,
-        "y": 0,
+        "x": 180,
+        "y": 114,
         "w": 90,
         "h": 114
       },
-      "rotated": true,
+      "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
@@ -194,12 +194,12 @@
     },
     "ina.png": {
       "frame": {
-        "x": 204,
-        "y": 0,
+        "x": 180,
+        "y": 228,
         "w": 90,
         "h": 114
       },
-      "rotated": true,
+      "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
@@ -218,12 +218,12 @@
     },
     "jana.png": {
       "frame": {
-        "x": 318,
+        "x": 270,
         "y": 0,
         "w": 90,
         "h": 114
       },
-      "rotated": true,
+      "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
@@ -242,12 +242,12 @@
     },
     "jens.png": {
       "frame": {
-        "x": 432,
-        "y": 0,
+        "x": 270,
+        "y": 114,
         "w": 90,
         "h": 114
       },
-      "rotated": true,
+      "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
@@ -266,12 +266,12 @@
     },
     "karl.png": {
       "frame": {
-        "x": 546,
-        "y": 0,
+        "x": 270,
+        "y": 228,
         "w": 90,
         "h": 114
       },
-      "rotated": true,
+      "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
@@ -290,12 +290,12 @@
     },
     "karsten.png": {
       "frame": {
-        "x": 660,
+        "x": 360,
         "y": 0,
         "w": 90,
         "h": 114
       },
-      "rotated": true,
+      "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
@@ -314,8 +314,8 @@
     },
     "lena.png": {
       "frame": {
-        "x": 90,
-        "y": 90,
+        "x": 360,
+        "y": 114,
         "w": 90,
         "h": 114
       },
@@ -338,8 +338,8 @@
     },
     "lorena.png": {
       "frame": {
-        "x": 90,
-        "y": 204,
+        "x": 360,
+        "y": 228,
         "w": 90,
         "h": 114
       },
@@ -362,8 +362,8 @@
     },
     "ludo.png": {
       "frame": {
-        "x": 90,
-        "y": 318,
+        "x": 450,
+        "y": 0,
         "w": 90,
         "h": 114
       },
@@ -386,8 +386,8 @@
     },
     "martina.png": {
       "frame": {
-        "x": 90,
-        "y": 432,
+        "x": 450,
+        "y": 114,
         "w": 90,
         "h": 114
       },
@@ -410,8 +410,8 @@
     },
     "michael.png": {
       "frame": {
-        "x": 90,
-        "y": 546,
+        "x": 450,
+        "y": 228,
         "w": 90,
         "h": 114
       },
@@ -434,8 +434,8 @@
     },
     "robert.png": {
       "frame": {
-        "x": 90,
-        "y": 660,
+        "x": 540,
+        "y": 0,
         "w": 90,
         "h": 114
       },
@@ -458,12 +458,12 @@
     },
     "tilman.png": {
       "frame": {
-        "x": 180,
-        "y": 90,
+        "x": 540,
+        "y": 114,
         "w": 90,
         "h": 114
       },
-      "rotated": true,
+      "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
@@ -482,12 +482,12 @@
     },
     "vilma.png": {
       "frame": {
-        "x": 294,
-        "y": 90,
+        "x": 540,
+        "y": 228,
         "w": 90,
         "h": 114
       },
-      "rotated": true,
+      "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
@@ -511,8 +511,8 @@
     "image": "texture.png",
     "format": "RGBA8888",
     "size": {
-      "w": 774,
-      "h": 798
+      "w": 630,
+      "h": 342
     },
     "scale": 1
   }
