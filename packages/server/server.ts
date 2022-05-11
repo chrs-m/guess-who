@@ -1,17 +1,21 @@
 import express from 'express';
-import cors from 'cors';
-import cookieParser from 'cookie-parser';
+import http from 'http';
+import WebSocket from 'ws';
 
-import path from 'path';
+const port = process.env.PORT || 3001;
+const server = http.createServer(express);
+const wss = new WebSocket.Server({ server });
 
-const app: express.Application = express();
+wss.on('connection', function connection(ws) {
+  ws.on('message', function incoming(data) {
+    wss.clients.forEach(function each(client) {
+      if (client !== ws && client.readyState === WebSocket.OPEN) {
+        client.send(data);
+      }
+    });
+  });
+});
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.listen(process.env.PORT ?? 3005, () => {
-  console.log(`Listening on port ${process.env.PORT ?? 3005}`);
+server.listen(port, () => {
+  console.log(`Listening on ${port}`);
 });
