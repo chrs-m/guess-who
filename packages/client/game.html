@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <style>
+      body,
+      app,
+      script {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <h1>Real time messaging</h1>
+    <pre id="messages" style="height: 400p; overflow: scroll"></pre>
+    <input
+      type="text"
+      id="messageBox"
+      placeholder="Type your message here"
+      style="display: block; width: 50%; margin-bottom: 10px; padding: 10px"
+    />
+    <button id="send" title="Send message!" style="width: 50%; height: 30px">
+      Send message
+    </button>
+    <script type="module">
+      import server from './src/socket';
+
+      const user = window.localStorage.getItem('user');
+
+      if (!user) {
+        window.location = '/';
+      }
+
+      (() => {
+        const sendBtn = document.querySelector('#send');
+        const messages = document.querySelector('#messages');
+        const messageBox = document.querySelector('#messageBox');
+
+        const showMessage = (data) => {
+          messages.textContent += `${data.user.username}: ${data.message} \n`;
+          messages.scrollTop = messages.scrollHeight;
+          messageBox.value = '';
+        };
+
+        sendBtn.onclick = () => {
+          if (!server) {
+            showMessage('No WebSocket connection');
+            return;
+          }
+
+          server.emit('send message', {
+            message: messageBox.value,
+            user: JSON.parse(user),
+          });
+        };
+
+        server.on('received message', (data) => {
+          console.log(data);
+
+          showMessage(data);
+        });
+      })();
+    </script>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
