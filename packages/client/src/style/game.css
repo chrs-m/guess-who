@@ -1,0 +1,44 @@
+body,
+app,
+script {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.chatContainer {
+  position: absolute;
+  right: 3rem;
+  top: 20%;
+}
+
+.chatContainer h1 {
+  font-family: sans-serif;
+  color: white;
+}
+
+#messages {
+  background-color: white;
+  height: 200px;
+  width: 400px;
+  overflow: scroll;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  padding: 0.3rem;
+}
+
+#messageBox {
+  display: block;
+  width: 380px;
+  margin-bottom: 10px;
+  padding: 6px;
+  border-radius: 1rem;
+}
+
+#send {
+  width: fit-content;
+  height: 30px;
+  padding: 0.3rem;
+  border-radius: 1rem;
+}
