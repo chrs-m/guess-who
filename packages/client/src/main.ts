@@ -1,8 +1,6 @@
 import * as PIXI from 'pixi.js';
 import { Spritesheet } from 'pixi.js';
 
-import nameArray from './charNames';
-
 let sheet: Spritesheet | undefined;
 
 var app = new PIXI.Application({
@@ -64,22 +62,11 @@ function spritesLoaded() {
   for (let x = 0; x < 7; x++) {
     for (let y = 0; y < 3; y++) {
       if (textures) {
-        let text = new PIXI.Text(nameArray[imgIndex], {
-          fontFamily: 'Arial',
-          fontSize: 24,
-          fill: 0x000,
-          align: 'center',
-        });
-
         const texture = PIXI.Sprite.from(textures[imgIndex]);
         texture.interactive = true;
         texture.buttonMode = true;
 
         let isChecked = false;
-
-        text.position.x = x * boxWidth + x + 1 * 50;
-        text.position.y = y * boxHeight + y + 1 * 20;
-        app.stage.addChild(text);
 
         texture.position.x = x * boxWidth + x + 1 * gap;
         texture.position.y = y * boxHeight + y + 1 * gap;
