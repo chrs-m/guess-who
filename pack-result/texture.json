@@ -1,503 +1,503 @@
 {
   "frames": {
-    "Birgitte.png": {
+    "birgitte.png": {
       "frame": {
         "x": 0,
         "y": 0,
         "w": 90,
-        "h": 131
+        "h": 114
       },
       "rotated": false,
-      "trimmed": true,
+      "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
         "w": 90,
-        "h": 131
+        "h": 114
       },
       "sourceSize": {
         "w": 90,
-        "h": 134
+        "h": 114
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Georg.png": {
+    "conrad.png": {
       "frame": {
         "x": 0,
-        "y": 131,
+        "y": 114,
         "w": 90,
-        "h": 131
+        "h": 114
       },
       "rotated": false,
-      "trimmed": true,
+      "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
         "w": 90,
-        "h": 131
+        "h": 114
       },
       "sourceSize": {
-        "w": 91,
-        "h": 134
+        "w": 90,
+        "h": 114
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Fabien.png": {
+    "erika.png": {
       "frame": {
         "x": 0,
-        "y": 262,
+        "y": 228,
         "w": 90,
-        "h": 129
+        "h": 114
       },
       "rotated": false,
-      "trimmed": true,
+      "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
         "w": 90,
-        "h": 129
+        "h": 114
       },
       "sourceSize": {
         "w": 90,
-        "h": 134
+        "h": 114
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Frank.png": {
+    "fabien.png": {
+      "frame": {
+        "x": 0,
+        "y": 342,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "frank.png": {
+      "frame": {
+        "x": 0,
+        "y": 456,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "georg.png": {
+      "frame": {
+        "x": 0,
+        "y": 570,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "hanna.png": {
+      "frame": {
+        "x": 0,
+        "y": 684,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "hans.png": {
       "frame": {
         "x": 90,
         "y": 0,
         "w": 90,
-        "h": 129
+        "h": 114
       },
-      "rotated": false,
-      "trimmed": true,
+      "rotated": true,
+      "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
         "w": 90,
-        "h": 129
+        "h": 114
       },
       "sourceSize": {
         "w": 90,
-        "h": 134
+        "h": 114
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Hanna.png": {
+    "ina.png": {
+      "frame": {
+        "x": 204,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "jana.png": {
+      "frame": {
+        "x": 318,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "jens.png": {
+      "frame": {
+        "x": 432,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "karl.png": {
+      "frame": {
+        "x": 546,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "karsten.png": {
+      "frame": {
+        "x": 660,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "lena.png": {
       "frame": {
         "x": 90,
-        "y": 129,
+        "y": 90,
         "w": 90,
-        "h": 129
+        "h": 114
       },
       "rotated": false,
-      "trimmed": true,
+      "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
         "w": 90,
-        "h": 129
+        "h": 114
       },
       "sourceSize": {
         "w": 90,
-        "h": 134
+        "h": 114
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Hans.png": {
+    "lorena.png": {
       "frame": {
         "x": 90,
-        "y": 258,
+        "y": 204,
         "w": 90,
-        "h": 129
+        "h": 114
       },
       "rotated": false,
-      "trimmed": true,
+      "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
         "w": 90,
-        "h": 129
+        "h": 114
       },
       "sourceSize": {
         "w": 90,
-        "h": 134
+        "h": 114
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Ina.png": {
+    "ludo.png": {
+      "frame": {
+        "x": 90,
+        "y": 318,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "martina.png": {
+      "frame": {
+        "x": 90,
+        "y": 432,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "michael.png": {
+      "frame": {
+        "x": 90,
+        "y": 546,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "robert.png": {
+      "frame": {
+        "x": 90,
+        "y": 660,
+        "w": 90,
+        "h": 114
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 114
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "tilman.png": {
       "frame": {
         "x": 180,
-        "y": 0,
+        "y": 90,
         "w": 90,
-        "h": 129
+        "h": 114
       },
-      "rotated": false,
-      "trimmed": true,
+      "rotated": true,
+      "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
         "w": 90,
-        "h": 129
+        "h": 114
       },
       "sourceSize": {
         "w": 90,
-        "h": 134
+        "h": 114
       },
       "pivot": {
         "x": 0.5,
         "y": 0.5
       }
     },
-    "Jana.png": {
+    "vilma.png": {
       "frame": {
-        "x": 180,
-        "y": 129,
+        "x": 294,
+        "y": 90,
         "w": 90,
-        "h": 129
+        "h": 114
       },
-      "rotated": false,
-      "trimmed": true,
+      "rotated": true,
+      "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
         "w": 90,
-        "h": 129
+        "h": 114
       },
       "sourceSize": {
         "w": 90,
-        "h": 134
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Jens.png": {
-      "frame": {
-        "x": 180,
-        "y": 258,
-        "w": 90,
-        "h": 129
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "sourceSize": {
-        "w": 90,
-        "h": 134
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Karl.png": {
-      "frame": {
-        "x": 270,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "sourceSize": {
-        "w": 92,
-        "h": 134
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Lena.png": {
-      "frame": {
-        "x": 270,
-        "y": 129,
-        "w": 90,
-        "h": 129
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "sourceSize": {
-        "w": 90,
-        "h": 134
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Lorena.png": {
-      "frame": {
-        "x": 270,
-        "y": 258,
-        "w": 90,
-        "h": 129
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "sourceSize": {
-        "w": 91,
-        "h": 134
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Ludo.png": {
-      "frame": {
-        "x": 360,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "sourceSize": {
-        "w": 90,
-        "h": 134
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Martina.png": {
-      "frame": {
-        "x": 360,
-        "y": 129,
-        "w": 90,
-        "h": 129
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "sourceSize": {
-        "w": 90,
-        "h": 134
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Michael.png": {
-      "frame": {
-        "x": 360,
-        "y": 258,
-        "w": 90,
-        "h": 129
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "sourceSize": {
-        "w": 90,
-        "h": 134
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Robert.png": {
-      "frame": {
-        "x": 450,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "sourceSize": {
-        "w": 90,
-        "h": 134
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Tilman.png": {
-      "frame": {
-        "x": 450,
-        "y": 129,
-        "w": 90,
-        "h": 129
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "sourceSize": {
-        "w": 90,
-        "h": 134
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Vilma.png": {
-      "frame": {
-        "x": 450,
-        "y": 258,
-        "w": 90,
-        "h": 129
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 129
-      },
-      "sourceSize": {
-        "w": 90,
-        "h": 134
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Conrad.png": {
-      "frame": {
-        "x": 540,
-        "y": 0,
-        "w": 90,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 90,
-        "h": 133
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Erika.png": {
-      "frame": {
-        "x": 540,
-        "y": 128,
-        "w": 90,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 90,
-        "h": 133
-      },
-      "pivot": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    "Karsten.png": {
-      "frame": {
-        "x": 540,
-        "y": 256,
-        "w": 90,
-        "h": 128
-      },
-      "rotated": false,
-      "trimmed": true,
-      "spriteSourceSize": {
-        "x": 0,
-        "y": 0,
-        "w": 90,
-        "h": 128
-      },
-      "sourceSize": {
-        "w": 90,
-        "h": 133
+        "h": 114
       },
       "pivot": {
         "x": 0.5,
@@ -511,8 +511,8 @@
     "image": "texture.png",
     "format": "RGBA8888",
     "size": {
-      "w": 630,
-      "h": 391
+      "w": 774,
+      "h": 798
     },
     "scale": 1
   }
