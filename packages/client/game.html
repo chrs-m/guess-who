@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style/game.css" />
+    <title>Guess who</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="chatContainer">
+      <h1>Chat</h1>
+      <pre id="messages"></pre>
+      <input type="text" id="messageBox" placeholder="Type your message here" />
+      <button id="send" title="Send message!">Send message</button>
+    </div>
+    <script type="module">
+      import server from './src/socket';
+
+      const user = window.localStorage.getItem('user');
+
+      if (!user) {
+        window.location = '/';
+      }
+
+      (() => {
+        const sendBtn = document.querySelector('#send');
+        const messages = document.querySelector('#messages');
+        const messageBox = document.querySelector('#messageBox');
+
+        messageBox.addEventListener('keydown', (event) => {
+          if (event.keyCode === 13) {
+            server.emit('send message', {
+              message: messageBox.value,
+              user: JSON.parse(user),
+            });
+          }
+        });
+
+        const showMessage = (data) => {
+          messages.textContent += `${data.user.username}: ${data.message} \n`;
+          messages.scrollTop = messages.scrollHeight;
+          messageBox.value = '';
+        };
+
+        sendBtn.onclick = () => {
+          if (!server) {
+            showMessage('No WebSocket connection');
+            return;
+          }
+
+          server.emit('send message', {
+            message: messageBox.value,
+            user: JSON.parse(user),
+          });
+        };
+
+        server.on('received message', (data) => {
+          console.log(data);
+
+          showMessage(data);
+        });
+      })();
+    </script>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

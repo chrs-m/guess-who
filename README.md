@@ -13,6 +13,7 @@ Written in TypeScript and Pixi.
 
 # Changelog
 
+-   [#5 - New chat w/ socket.io.](https://github.com/chrs-m/guess-who/pull/5)
 -   [#4 - Add WebSockets w/ chat.](https://github.com/chrs-m/guess-who/pull/4)
 -   [#3 - Add initial clickevent on cards.](https://github.com/chrs-m/guess-who/pull/3)
 -   [#2 - Displaying characters.](https://github.com/chrs-m/guess-who/pull/2)

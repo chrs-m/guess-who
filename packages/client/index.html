@@ -2,76 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <style>
-      body,
-      app,
-      script {
-        padding: 0px;
-        margin: 0px;
-        box-sizing: border-box;
-      }
-    </style>
+    <title>Guess who</title>
   </head>
   <body>
-    <div id="app"></div>
+    Name: <input type="text" />
+    <button type="submit">Join</button>
 
-    <h1>Real time messaging</h1>
-    <pre id="messages" style="height: 400p; overflow: scroll"></pre>
-    <input
-      type="text"
-      id="messageBox"
-      placeholder="Type your message here"
-      style="display: block; width: 50%; margin-bottom: 10px; padding: 10px"
-    />
-    <button id="send" title="Send message!" style="width: 50%; height: 30px">
-      Send message
-    </button>
-    <script>
-      (() => {
-        const sendBtn = document.querySelector('#send');
-        const messages = document.querySelector('#messages');
-        const messageBox = document.querySelector('#messageBox');
-
-        let ws;
-
-        const showMessage = (message) => {
-          messages.textContent += message + '\n';
-          messages.scrollTop = messages.scrollHeight;
-          messageBox.value = '';
-        };
-
-        const init = () => {
-          if (ws) {
-            ws.onerror = ws.onopen = ws.onclose = null;
-            ws.close();
-          }
-
-          ws = new WebSocket('ws://localhost:3001');
-          ws.onopen = () => {
-            console.log('Connected to server');
-          };
-
-          ws.onmessage = async ({ data }) => showMessage(await data.text());
-          ws.onclose = () => (ws = null);
-        };
-
-        sendBtn.onclick = () => {
-          if (!ws) {
-            showMessage('No WebSocket connection');
-            return;
-          }
-
-          ws.send(messageBox.value);
-          showMessage(messageBox.value);
-        };
-
-        init();
-      })();
-    </script>
-
-    <script type="module" src="/src/main.ts"></script>
+    <script src="./src/indexScript.js" type="module"></script>
   </body>
 </html>
