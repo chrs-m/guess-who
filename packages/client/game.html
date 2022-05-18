@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./src/style/game.css" />
     <title>Guess who</title>
   </head>
@@ -15,6 +21,10 @@
       <input type="text" id="messageBox" placeholder="Type your message here" />
       <button id="send" title="Send message!">Send message</button>
     </div>
+
+    <div>Time left this turn: <span id="time">02:00</span></div>
+    <button id="nextTurn" title="Next turn">Next turn</button>
+
     <script type="module">
       import server from './src/socket';
 
@@ -50,10 +60,12 @@
             return;
           }
 
-          server.emit('send message', {
-            message: messageBox.value,
-            user: JSON.parse(user),
-          });
+          if (messageBox.value) {
+            server.emit('send message', {
+              message: messageBox.value,
+              user: JSON.parse(user),
+            });
+          }
         };
 
         server.on('received message', (data) => {
@@ -65,5 +77,6 @@
     </script>
 
     <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="./src/timer.js"></script>
   </body>
 </html>

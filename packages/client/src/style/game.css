@@ -4,6 +4,7 @@ script {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  font-family: 'Didact Gothic', sans-serif;
 }
 
 .chatContainer {
@@ -14,7 +15,7 @@ script {
 
 .chatContainer h1 {
   font-family: sans-serif;
-  color: white;
+  color: black;
 }
 
 #messages {
@@ -22,10 +23,11 @@ script {
   height: 200px;
   width: 400px;
   overflow-y: scroll;
-  font-family: sans-serif;
+  font-family: 'Didact Gothic', sans-serif;
   font-size: 0.8rem;
   border-radius: 1rem;
   padding: 0.3rem;
+  border: 1px solid black;
 }
 
 #messageBox {
@@ -34,6 +36,7 @@ script {
   margin-bottom: 10px;
   padding: 6px;
   border-radius: 1rem;
+  font-family: 'Didact Gothic', sans-serif;
 }
 
 #send {
@@ -41,4 +44,14 @@ script {
   height: 30px;
   padding: 0.3rem;
   border-radius: 1rem;
+  border: none;
+  font-family: 'Didact Gothic', sans-serif;
+  background-color: rgb(142, 217, 245);
+  color: white;
+}
+
+#send:hover {
+  color: black;
+  background-color: rgb(89, 198, 237);
+  filter: drop-shadow(0 0 0.25rem rgb(154, 154, 154));
 }
