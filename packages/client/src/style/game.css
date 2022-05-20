@@ -39,7 +39,8 @@ script {
   font-family: 'Didact Gothic', sans-serif;
 }
 
-#send {
+#send,
+#turn {
   width: fit-content;
   height: 30px;
   padding: 0.3rem;
@@ -50,8 +51,23 @@ script {
   color: white;
 }
 
-#send:hover {
+#send:hover,
+#turn:hover {
   color: black;
   background-color: rgb(89, 198, 237);
   filter: drop-shadow(0 0 0.25rem rgb(154, 154, 154));
+}
+
+.stopOverlay {
+  width: 60%;
+  height: 80%;
+  background-color: rgba(40, 40, 40, 0.85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  cursor: default;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
 }

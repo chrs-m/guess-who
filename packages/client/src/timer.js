@@ -1,28 +1,31 @@
-const startTimer = (duration, display) => {
-  var timer = duration,
-    minutes,
-    seconds;
+// import server from '../src/socket';
 
-  setInterval(function () {
-    minutes = parseInt(timer / 60, 10);
-    seconds = parseInt(timer % 60, 10);
-    duration = 0;
+// const startTimer = (duration, display) => {
+//   var timer = duration,
+//     minutes,
+//     seconds;
 
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
+//   setInterval(function () {
+//     minutes = parseInt(timer / 60, 10);
+//     seconds = parseInt(timer % 60, 10);
+//     duration = 0;
 
-    display.textContent = minutes + ':' + seconds;
+//     minutes = minutes < 10 ? '0' + minutes : minutes;
+//     seconds = seconds < 10 ? '0' + seconds : seconds;
 
-    if (--timer < 0) {
-      timer = duration;
-    }
-  }, 1000);
-};
+//     display.textContent = minutes + ':' + seconds;
 
-window.onload = function () {
-  var minutes = 60 * 2,
-    display = document.querySelector('#time');
-  startTimer(minutes, display);
-};
+//     if (--timer < 0) {
+//       timer = duration;
+//       server.emit('pass_turn');
+//     }
+//   }, 1000);
+// };
 
-export default startTimer;
+// window.onload = function () {
+//   var minutes = 60 * 2,
+//     display = document.querySelector('#time');
+//   startTimer(minutes, display);
+// };
+
+// export default startTimer;
