@@ -1,7 +1,7 @@
 import * as PIXI from 'pixi.js';
 import { Spritesheet } from 'pixi.js';
 
-let sheet: Spritesheet | undefined;
+let sheet;
 
 var app = new PIXI.Application({
   antialias: true,

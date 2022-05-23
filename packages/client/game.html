@@ -28,7 +28,7 @@
     <script type="module">
       import server from './src/socket';
 
-      const user = window.localStorage.getItem('user');
+      // const user = window.localStorage.getItem('user');
 
       if (!user) {
         window.location = '/';
@@ -91,6 +91,30 @@
           console.log('player two sending');
         }
       });
+
+      ///////////
+
+      let user;
+
+      onMount(() => {
+        $socket.on('user', (arg) => {
+          if (!user) {
+            user = arg;
+          }
+          if (user.user.id == arg.user.id) {
+            user = arg;
+          }
+        });
+
+        $socket.on('turn', (arg) => {
+          turn = arg;
+        });
+      });
+      async function changeTurn(e) {
+        if (user) {
+          $socket.emit('setTurn', user.user.id);
+        }
+      }
     </script>
 
     <script type="module" src="/src/main.ts"></script>
