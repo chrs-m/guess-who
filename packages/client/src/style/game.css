@@ -70,4 +70,5 @@ script {
   text-align: center;
   font-size: 2rem;
   color: white;
+  display: none;
 }

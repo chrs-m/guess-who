@@ -1,7 +1,7 @@
 import socket from './socket';
 
 let playerTurn = true;
-const blockBox = document.querySelector('#app');
+const blockBox = document.querySelector('.stopOverlay');
 const nextTurnBtn = document.querySelector('#turn');
 
 let player = false;
@@ -26,13 +26,6 @@ const endTurn = () => {
 socket.on('turn', (data) => {
   if (player !== data) {
     blockBox.classList.add('stopOverlay');
-
-    const text = document.createTextNode(
-      'Please wait for oppent to end its turn..'
-    );
-
-    blockBox.appendChild(text);
-    blockBox.appendChild;
     blockBox.style.display = 'block';
   }
 
