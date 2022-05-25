@@ -1,4 +1,11 @@
 #app {
   font-family: 'Didact Gothic', sans-serif;
-  text-align: center;
+}
+
+body,
+app,
+script {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }

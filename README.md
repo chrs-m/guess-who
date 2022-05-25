@@ -3,17 +3,18 @@
 # Guess who
 
 A modern take on the classic "Guess who".
-Written in TypeScript and Pixi.
 
 # Installation
 
 1. Clone the repo
 2. Run 'npm install' in the root folder
-3. Start a localhost by running 'npm run dev'
+3. Start a localhost by running 'npm start'
+4. Test function by using two browsers, one being in incognito mode.
 
 # Changelog
 
 -   [#8 - Choose character.](https://github.com/chrs-m/guess-who/pull/8)
+-   [#7 - Turn based logic now in place.](https://github.com/chrs-m/guess-who/pull/7)
 -   [#6 - New board design + imgs.](https://github.com/chrs-m/guess-who/pull/6)
 -   [#5 - New chat w/ socket.io.](https://github.com/chrs-m/guess-who/pull/5)
 -   [#4 - Add WebSockets w/ chat.](https://github.com/chrs-m/guess-who/pull/4)
