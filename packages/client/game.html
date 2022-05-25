@@ -28,73 +28,21 @@
     <script type="module">
       import socket from './src/socket';
 
-      const user = window.localStorage.getItem('user');
+      let player = false;
 
-      if (!user) {
-        window.location = '/';
-      }
-
-      (() => {
-        const sendBtn = document.querySelector('#send');
-        const messages = document.querySelector('#messages');
-        const messageBox = document.querySelector('#messageBox');
-
-        messageBox.addEventListener('keydown', (event) => {
-          if (event.keyCode === 13) {
-            socket.emit('send message', {
-              message: messageBox.value,
-              user: JSON.parse(user),
-            });
-          }
-        });
-
-        const showMessage = (data) => {
-          messages.textContent += `${data.user.username}: ${data.message} \n`;
-          messages.scrollTop = messages.scrollHeight;
-          messageBox.value = '';
-        };
-
-        sendBtn.onclick = () => {
-          if (!socket) {
-            showMessage('No WebSocket connection');
-            return;
-          }
-
-          if (messageBox.value) {
-            socket.emit('send message', {
-              message: messageBox.value,
-              user: JSON.parse(user),
-            });
-          }
-        };
-
-        socket.on('received message', (data) => {
-          console.log(data);
-
-          showMessage(data);
-        });
-      })();
-
-      document.querySelector('#turn').addEventListener('click', function (e) {
-        socket.emit('pass_turn');
-        let playerId = socket.id;
-
-        console.log(socket.id);
+      socket.on('player', (data) => {
+        if (!player) {
+          player = data;
+        }
       });
 
-      socket.on('next_turn', (data) => {
-        console.log(data);
-        console.log(socket.id);
-
-        if (data.player === socket.id) {
-          console.log('player one sending');
-        } else {
-          console.log('player two sending');
-        }
+      socket.on('turn', (data) => {
+        console.log(data === player);
       });
     </script>
 
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/chat.js"></script>
     <script type="module" src="/src/timer.js"></script>
     <script type="module" src="/src/endTurn.js"></script>
   </body>
