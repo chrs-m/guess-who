@@ -13,6 +13,7 @@ A modern take on the classic "Guess who".
 
 # Changelog
 
+-   [#8 - Choose character.](https://github.com/chrs-m/guess-who/pull/8)
 -   [#7 - Turn based logic now in place.](https://github.com/chrs-m/guess-who/pull/7)
 -   [#6 - New board design + imgs.](https://github.com/chrs-m/guess-who/pull/6)
 -   [#5 - New chat w/ socket.io.](https://github.com/chrs-m/guess-who/pull/5)

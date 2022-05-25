@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,12 +11,70 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/style/style.css" />
+    <link rel="stylesheet" href="./src/style/game.css" />
     <title>Guess who</title>
   </head>
   <body>
-    Name: <input type="text" />
-    <button type="submit">Join</button>
-
+    Name: <input type="text" class="input" />
+    <button type="submit" class="btnJoin">Join</button>
+    <div id="app"></div>
+    <div class="chatContainer">
+      <h1>Chat</h1>
+      <pre id="messages"></pre>
+      <input type="text" id="messageBox" placeholder="Type your message here" />
+      <button id="send" title="Send message!">Send message</button>
+    </div>
     <script src="./src/indexScript.js" type="module"></script>
+    <script type="module">
+      import server from './src/socket';
+
+      const user = window.localStorage.getItem('user');
+
+      if (!user) {
+        window.location = '/';
+      }
+
+      (() => {
+        const sendBtn = document.querySelector('#send');
+        const messages = document.querySelector('#messages');
+        const messageBox = document.querySelector('#messageBox');
+
+        messageBox.addEventListener('keydown', (event) => {
+          if (event.keyCode === 13) {
+            server.emit('send message', {
+              message: messageBox.value,
+              user: JSON.parse(user),
+            });
+          }
+        });
+
+        const showMessage = (data) => {
+          messages.textContent += `${data.user.username}: ${data.message} \n`;
+          messages.scrollTop = messages.scrollHeight;
+          messageBox.value = '';
+        };
+
+        sendBtn.onclick = () => {
+          if (!server) {
+            showMessage('No WebSocket connection');
+            return;
+          }
+
+          server.emit('send message', {
+            message: messageBox.value,
+            user: JSON.parse(user),
+          });
+        };
+
+        server.on('received message', (data) => {
+          console.log(data);
+
+          showMessage(data);
+        });
+      })();
+    </script>
+
+    <script src="./src/characters.js" type="module"></script>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
