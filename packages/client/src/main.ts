@@ -6,7 +6,7 @@ let sheet: Spritesheet | undefined;
 var app = new PIXI.Application({
   antialias: true,
   width: window.innerWidth,
-  height: window.innerHeight,
+  // height: window.innerHeight,
   backgroundColor: 0xffffff,
 });
 document.body.appendChild(app.view);
