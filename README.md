@@ -8,7 +8,8 @@ A modern take on the classic "Guess who".
 
 1. Clone the repo
 2. Run 'npm install' in the root folder
-3. Start a localhost by running 'npm run dev'
+3. Start a localhost by running 'npm start'
+4. Test function by using two browsers, one being in incognito mode.
 
 # Changelog
 
