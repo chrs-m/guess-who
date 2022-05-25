@@ -49,6 +49,7 @@ script {
   font-family: 'Didact Gothic', sans-serif;
   background-color: rgb(142, 217, 245);
   color: white;
+  cursor: pointer;
 }
 
 #send:hover,
@@ -59,8 +60,8 @@ script {
 }
 
 .stopOverlay {
-  width: 60%;
-  height: 80%;
+  width: 65%;
+  height: 70%;
   background-color: rgba(40, 40, 40, 0.85);
   position: absolute;
   top: 0;

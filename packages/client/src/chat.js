@@ -2,9 +2,6 @@ import socket from './socket';
 
 const user = window.localStorage.getItem('user');
 
-if (!user) {
-  window.location = '/';
-}
 const chat = (() => {
   const sendBtn = document.querySelector('#send');
   const messages = document.querySelector('#messages');
@@ -41,7 +38,6 @@ const chat = (() => {
   };
 
   socket.on('received message', (data) => {
-    // console.log(data);
     showMessage(data);
   });
 })();

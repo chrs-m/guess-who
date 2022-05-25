@@ -10,8 +10,6 @@ const io = new Server(server, { cors: { origin: '*' } });
 let players = [];
 
 io.on('connection', (socket) => {
-  // console.log('A player connected');
-
   let playerId = socket.id;
 
   socket.emit('player', playerId);
@@ -50,12 +48,8 @@ io.on('connection', (socket) => {
   //TURN LOGIC
   socket.on('pass_turn', (player) => {
     let nrOfPlayers = Object.values(players).length;
-    // console.log(player);
 
     let playerNr = players.findIndex((p) => p == player);
-    // console.log(playerNr);
-
-    // console.log({ players });
 
     if (playerNr + 1 < nrOfPlayers) {
       io.emit('turn', players[playerNr + 1]);
