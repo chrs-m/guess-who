@@ -1,9 +1,9 @@
 import server from './socket';
 
-let playerTurn: boolean = true;
-const blockBox: HTMLElement | null = document.querySelector('#app');
+let playerTurn = true;
+const blockBox = document.querySelector('#app');
 
-const nextTurnBtn: HTMLElement | null = document.querySelector('#turn');
+const nextTurnBtn = document.querySelector('#turn');
 
 if (nextTurnBtn !== null) {
   nextTurnBtn.addEventListener('click', () => {

@@ -7,12 +7,13 @@ const server = http.createServer(express);
 
 const io = new Server(server, { cors: { origin: '*' } });
 
+let players = [];
+
 io.on('connection', (socket) => {
   console.log('A player connected');
 
   let playerId = socket.id;
 
-  let players = [];
   let current_turn = 0;
   let timeOut;
   let _turn = 0;
@@ -49,6 +50,8 @@ io.on('connection', (socket) => {
     io.to('1').emit('received message', data);
   });
 
+  players.push(playerId);
+
   socket.on('disconnect', function () {
     console.log('A player disconnected');
     players.splice(players.indexOf(socket), 1);
@@ -56,75 +59,31 @@ io.on('connection', (socket) => {
     console.log('A number of players now ', players.length);
   });
 
-  // players.push(socket.id);
+  console.log(players.length);
+  console.log(players);
 
-  // let playerOne = players[0];
-  // let playerTwo = players[1];
+  ///////////////////////////
 
-  // // if (playerOne === null) {
-  // //   playerOne = playerId;
-  // // } else {
-  // //   playerTwo = playerId;
-  // // }
+  let playerOne = players[0];
+  let playerTwo = players[1];
 
-  // socket.on('pass_turn', function () {
-  //   console.log({ playerOne, playerTwo, _turn });
-  //   if (players[_turn] == socket) {
-  //     next_turn();
-  //   }
-
-  //   socket.to('1').emit('next_turn', {
-  //     player: _turn % 2 == 0 ? playerOne : playerTwo,
-  //   });
-  // });
-
-  //////////////////////////////
-
-  let users = [];
-  let turn = false;
-
-  if (io.engine.clientsCount > 2) {
-    socket.emit('err', { message: 'reach the limit of connections' });
-    socket.disconnect();
-    console.log('Disconnected...');
-    return;
+  if (playerOne === null) {
+    playerOne = playerId;
   } else {
-    console.log('a user connected');
+    playerTwo = playerId;
   }
 
-  function removeDuplicates(arr) {
-    return arr.filter((item, index) => arr.indexOf(item) === index);
-  }
+  socket.on('pass_turn', function () {
+    _turn++;
 
-  socket.on('setTurn', (arg) => {
-    let turnId = arr.findIndex((user) => user.user.id == arg);
-    let nextTurn = arr.length - 1 > turnId ? turnId + 1 : 0;
-    io.emit('turn', arr[nextTurn].user.id);
-  });
+    console.log({ playerOne, playerTwo, _turn });
+    if (players[_turn] == socket) {
+      next_turn();
+    }
 
-  if (io.engine.clientsCount > 4) {
-    socket.emit('err', { message: 'reach the limit of connections' });
-    socket.disconnect();
-    console.log('Disconnected...');
-    return;
-  } else {
-    console.log('a user connected');
-  }
-
-  users = removeDuplicates([
-    ...users,
-    {
-      user: { name: '', id: `${socket.id}` },
-    },
-  ]);
-
-  if (!turn && users.length > 0) {
-    turn = users[0].user.id;
-    io.emit('turn', turn);
-  }
-
-  io.emit('user', {
-    user: { name: '', id: `${socket.id}`, nr: io.engine.clientsCount },
+    socket.to('1').emit('next_turn', {
+      player: _turn % 2 == 0 ? playerOne : playerTwo,
+    });
   });
 });
 

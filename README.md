@@ -3,7 +3,6 @@
 # Guess who
 
 A modern take on the classic "Guess who".
-Written in TypeScript and Pixi.
 
 # Installation
 

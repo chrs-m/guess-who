@@ -26,9 +26,9 @@
     <button type="button" id="turn" name="button">Next Turn</button>
 
     <script type="module">
-      import server from './src/socket';
+      import socket from './src/socket';
 
-      // const user = window.localStorage.getItem('user');
+      const user = window.localStorage.getItem('user');
 
       if (!user) {
         window.location = '/';
@@ -41,7 +41,7 @@
 
         messageBox.addEventListener('keydown', (event) => {
           if (event.keyCode === 13) {
-            server.emit('send message', {
+            socket.emit('send message', {
               message: messageBox.value,
               user: JSON.parse(user),
             });
@@ -55,20 +55,20 @@
         };
 
         sendBtn.onclick = () => {
-          if (!server) {
+          if (!socket) {
             showMessage('No WebSocket connection');
             return;
           }
 
           if (messageBox.value) {
-            server.emit('send message', {
+            socket.emit('send message', {
               message: messageBox.value,
               user: JSON.parse(user),
             });
           }
         };
 
-        server.on('received message', (data) => {
+        socket.on('received message', (data) => {
           console.log(data);
 
           showMessage(data);
@@ -76,49 +76,26 @@
       })();
 
       document.querySelector('#turn').addEventListener('click', function (e) {
-        server.emit('pass_turn');
-        let playerId = server.id;
+        socket.emit('pass_turn');
+        let playerId = socket.id;
 
-        console.log(server.id);
+        console.log(socket.id);
       });
 
-      server.on('next_turn', (data) => {
+      socket.on('next_turn', (data) => {
         console.log(data);
+        console.log(socket.id);
 
-        if (data.player === server.id) {
+        if (data.player === socket.id) {
           console.log('player one sending');
         } else {
           console.log('player two sending');
         }
       });
-
-      ///////////
-
-      let user;
-
-      onMount(() => {
-        $socket.on('user', (arg) => {
-          if (!user) {
-            user = arg;
-          }
-          if (user.user.id == arg.user.id) {
-            user = arg;
-          }
-        });
-
-        $socket.on('turn', (arg) => {
-          turn = arg;
-        });
-      });
-      async function changeTurn(e) {
-        if (user) {
-          $socket.emit('setTurn', user.user.id);
-        }
-      }
     </script>
 
-    <script type="module" src="/src/main.ts"></script>
-    <script type="module" src="./src/timer.js"></script>
-    <script type="module" src="./src/endTurn.ts"></script>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/timer.js"></script>
+    <script type="module" src="/src/endTurn.js"></script>
   </body>
 </html>
