@@ -10,12 +10,22 @@ script {
 .chatContainer {
   position: absolute;
   right: 3rem;
-  top: 20%;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .chatContainer h1 {
   font-family: sans-serif;
   color: black;
+}
+
+.chatContainer .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 #messages {
@@ -40,26 +50,106 @@ script {
 }
 
 #send,
-#turn {
-  width: fit-content;
-  height: 30px;
+#turn,
+#guess {
+  width: 40%;
+  height: 40px;
   padding: 0.3rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   border: none;
   font-family: 'Didact Gothic', sans-serif;
+  font-size: 1rem;
   background-color: rgb(142, 217, 245);
-  color: white;
+  box-shadow: 3px 3px 5px grey;
+  color: rgb(51, 82, 93);
   cursor: pointer;
 }
 
 #send:hover,
-#turn:hover {
+#turn:hover,
+#guess:hover {
   color: black;
+  font-weight: bold;
   background-color: rgb(89, 198, 237);
   filter: drop-shadow(0 0 0.25rem rgb(154, 154, 154));
 }
 
+.chooseNameContainer {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.nameSpan {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nameInput {
+  font-size: 1.3rem;
+}
+
+.btnJoin {
+  width: 50px;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 1rem;
+  background-color: rgb(80, 96, 247);
+  box-shadow: 3px 3px 5px grey;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.guessContainer {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.guessAvatar select {
+  font-size: 1.1rem;
+  width: 90%;
+}
+
 .stopOverlay {
+  width: 65%;
+  height: 70%;
+  background-color: rgba(40, 40, 40, 0.85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  cursor: default;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  display: none;
+}
+.lostOverlay {
+  width: 65%;
+  height: 70%;
+  background-color: rgba(40, 40, 40, 0.85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  cursor: default;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  display: none;
+}
+.winOverlay {
   width: 65%;
   height: 70%;
   background-color: rgba(40, 40, 40, 0.85);
