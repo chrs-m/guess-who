@@ -13,6 +13,7 @@ A modern take on the classic "Guess who".
 
 # Changelog
 
+-   [#10 - Guess logic + visual updates.](https://github.com/chrs-m/guess-who/pull/10)
 -   [#9 - Fix issues when merging to one file.](https://github.com/chrs-m/guess-who/pull/9)
 -   [#8 - Choose character.](https://github.com/chrs-m/guess-who/pull/8)
 -   [#7 - Turn based logic now in place.](https://github.com/chrs-m/guess-who/pull/7)
