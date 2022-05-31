@@ -41,7 +41,7 @@ const endTurn = () => {
 };
 
 socket.on('turn', (data) => {
-  console.log(player);
+  // console.log(player);
 
   if (player.id !== data.id) {
     blockBox.classList.add('stopOverlay');

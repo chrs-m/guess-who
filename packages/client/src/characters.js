@@ -81,7 +81,6 @@ function displayGame(characterID) {
       imgDiv.style.marginLeft = '27.5%';
 
       document.body.appendChild(imgDiv);
-      imgDiv.appendChild(text);
 
       const src = character;
       const choosenCharacter = document.createElement('img');
