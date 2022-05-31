@@ -1,3 +1,5 @@
+import socket from './socket';
+
 const characterImages = [
   '/assets/img/characters/birgitte.png',
   '/assets/img/characters/frank.png',
@@ -27,8 +29,10 @@ overlay.style.position = 'absolute';
 overlay.style.width = '60%';
 overlay.style.paddingLeft = '48px';
 overlay.style.paddingTop = '32px';
-overlay.style.backgroundColor = 'red';
+overlay.style.backgroundColor = 'lightgrey';
 document.body.appendChild(overlay);
+
+let names = [];
 
 for (let index = 0; index < characterImages.length; index++) {
   const img = document.createElement('img');
@@ -40,8 +44,25 @@ for (let index = 0; index < characterImages.length; index++) {
 
   img.addEventListener('click', () => {
     displayGame(index);
+    socket.emit('setAvatar', index);
   });
+
+  names.push(
+    characterImages[index]
+      .split('/')
+      [characterImages[index].split('/').length - 1].split('.png')[0]
+  );
 }
+
+document.querySelector('.guessAvatar').innerHTML = `
+<label for="avatar">Guess avatar:</label>
+
+<select name="avatars" id="avatars">
+${names.map((name, i) => {
+  return `<option value="${i}">${name}</option>`;
+})}
+</select>
+`;
 
 function displayGame(characterID) {
   const charactersIndexId = characterID;

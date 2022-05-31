@@ -1,6 +1,10 @@
 import socket from './socket';
 
-const user = window.localStorage.getItem('user');
+// const user = window.localStorage.getItem('user');
+let user;
+socket.on('player', (p) => {
+  user = p.name;
+});
 
 const chat = (() => {
   const sendBtn = document.querySelector('#send');
@@ -11,13 +15,13 @@ const chat = (() => {
     if (event.keyCode === 13) {
       socket.emit('send message', {
         message: messageBox.value,
-        user: JSON.parse(user),
+        user: user,
       });
     }
   });
 
   const showMessage = (data) => {
-    messages.textContent += `${data.user.username}: ${data.message} \n`;
+    messages.textContent += `${data.user}: ${data.message} \n`;
     messages.scrollTop = messages.scrollHeight;
     messageBox.value = '';
   };
@@ -31,9 +35,9 @@ const chat = (() => {
     if (messageBox.value) {
       socket.emit('send message', {
         message: messageBox.value,
-        user: JSON.parse(user),
+        user: user,
       });
-      console.log(socket.id);
+      // console.log(socket.id);
     }
   };
 

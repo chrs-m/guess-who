@@ -12,7 +12,13 @@ let players = [];
 io.on('connection', (socket) => {
   let playerId = socket.id;
 
-  socket.emit('player', playerId);
+  let playerIndex = players.findIndex((p) => p.id == socket.id);
+  console.log(playerIndex);
+
+  if (playerIndex === -1) {
+    socket.emit('player', { id: playerId, name: '', avatar: '' });
+    players.push({ id: playerId, name: '', avatar: '' });
+  }
 
   //JOIN & CONNECTION LOGIC
   socket.on('join room', (data) => {
@@ -24,17 +30,58 @@ io.on('connection', (socket) => {
     });
   });
 
+  //SET USERNAME
+  socket.on('setUsername', (name) => {
+    playerIndex = players.findIndex((p) => p.id == socket.id);
+    console.log('hej', playerIndex);
+
+    players[playerIndex].name = name;
+    console.log('asdf', players[playerIndex]);
+
+    socket.emit('player', players[playerIndex]);
+    console.log(players);
+  });
+
+  //SET AVATAR
+  socket.on('setAvatar', (avatar) => {
+    playerIndex = players.findIndex((p) => p.id == socket.id);
+
+    players[playerIndex].avatar = avatar;
+
+    socket.emit('player', players[playerIndex]);
+    console.log(players);
+  });
+
+  //GUESS AVATAR
+  socket.on('guessAvatar', (id) => {
+    let nrOfPlayers = Object.values(players).length;
+    let playerNr = players.findIndex((p) => p.id == socket.id);
+
+    if (playerNr + 1 < nrOfPlayers) {
+      if (players[playerNr + 1].avatar == id) {
+        socket.emit('guessedAvatar', { id: socket.id, correct: true });
+      } else {
+        socket.emit('guessedAvatar', { id: socket.id, correct: false });
+      }
+    } else {
+      if (players[0].avatar == id) {
+        socket.emit('guessedAvatar', { id: socket.id, correct: true });
+      } else {
+        socket.emit('guessedAvatar', { id: socket.id, correct: false });
+      }
+    }
+  });
+
   io.on('connection', (socket) => {
     socket.join('1');
   });
 
-  players.push(playerId);
-  // players.push({ id: playerId, name: "", avatar: '' });
+  console.log(players);
 
   socket.on('disconnect', function () {
     console.log('A player disconnected');
     players = players.filter((p) => {
-      return p != socket.id;
+      return p.id != socket.id;
     });
   });
 
@@ -48,8 +95,7 @@ io.on('connection', (socket) => {
   //TURN LOGIC
   socket.on('pass_turn', (player) => {
     let nrOfPlayers = Object.values(players).length;
-
-    let playerNr = players.findIndex((p) => p == player);
+    let playerNr = players.findIndex((p) => p.id == player);
 
     if (playerNr + 1 < nrOfPlayers) {
       io.emit('turn', players[playerNr + 1]);

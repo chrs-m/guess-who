@@ -19,19 +19,27 @@
       <p>Please wait for oppent to end its turn..</p>
     </div>
 
-    <span class="span">Name: </span><input type="text" class="input" />
-    <button type="submit" class="btnJoin">Join</button>
+    <div class="chooseNameContainer">
+      <span class="nameSpan">Name:</span
+      ><input type="text" class="nameInput" /><button
+        type="submit"
+        class="btnJoin"
+      >
+        Join
+      </button>
+    </div>
 
     <div id="app"></div>
 
-    <button type="button" id="turn" name="button">Next Turn</button>
-
     <div class="chatContainer">
-      <h1>Chat</h1>
       <pre id="messages"></pre>
       <input type="text" id="messageBox" placeholder="Type your message here" />
       <button id="send" title="Send message!">Send message</button>
+      <button type="button" id="turn" name="button">Next Turn</button>
     </div>
+
+    <div class="guessAvatar"></div>
+    <button type="button" id="guess" name="button">Guess character</button>
 
     <script type="module">
       import socket from './src/socket';
@@ -42,10 +50,6 @@
         if (!player) {
           player = data;
         }
-      });
-
-      socket.on('turn', (data) => {
-        console.log(data === player);
       });
     </script>
 
