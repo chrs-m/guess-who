@@ -6,7 +6,6 @@ let sheet;
 var app = new PIXI.Application({
   antialias: true,
   width: window.innerWidth,
-  // height: window.innerHeight,
   backgroundColor: 0xffffff,
 });
 document.body.appendChild(app.view);
@@ -33,7 +32,7 @@ const style = new PIXI.TextStyle({
 
 const myText = new PIXI.Text('Guess Who?', style);
 myText.x = window.innerWidth / 1.4;
-myText.y = 50;
+myText.y = 0;
 myText.interactive = true;
 myText.buttonMode = true;
 let isSet = false;

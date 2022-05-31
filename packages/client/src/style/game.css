@@ -21,6 +21,13 @@ script {
   color: black;
 }
 
+.chatContainer .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
 #messages {
   background-color: white;
   height: 200px;
@@ -43,7 +50,8 @@ script {
 }
 
 #send,
-#turn {
+#turn,
+#guess {
   width: 40%;
   height: 40px;
   padding: 0.3rem;
@@ -58,7 +66,8 @@ script {
 }
 
 #send:hover,
-#turn:hover {
+#turn:hover,
+#guess:hover {
   color: black;
   font-weight: bold;
   background-color: rgb(89, 198, 237);
@@ -92,6 +101,24 @@ script {
   box-shadow: 3px 3px 5px grey;
   color: rgb(255, 255, 255);
   cursor: pointer;
+}
+
+.guessContainer {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.guessAvatar select {
+  font-size: 1.1rem;
+  width: 90%;
 }
 
 .stopOverlay {

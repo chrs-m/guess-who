@@ -29,7 +29,11 @@ guessBtn.addEventListener('click', () => {
     if (data.correct) {
       console.log(data.id == player.id ? 'YOU WON :)' : 'YOU LOST :(');
     }
+    if (data.correct === false) {
+      console.log('wrong guess');
+    }
   });
+  endTurn();
 });
 
 const endTurn = () => {

@@ -57,18 +57,16 @@ io.on('connection', (socket) => {
     let nrOfPlayers = Object.values(players).length;
     let playerNr = players.findIndex((p) => p.id == socket.id);
 
-    if (playerNr + 1 < nrOfPlayers) {
-      if (players[playerNr + 1].avatar == id) {
-        socket.emit('guessedAvatar', { id: socket.id, correct: true });
-      } else {
-        socket.emit('guessedAvatar', { id: socket.id, correct: false });
-      }
+    if (players[playerNr + 1].avatar == id) {
+      socket.emit('guessedAvatar', { id: socket.id, correct: true });
     } else {
-      if (players[0].avatar == id) {
-        socket.emit('guessedAvatar', { id: socket.id, correct: true });
-      } else {
-        socket.emit('guessedAvatar', { id: socket.id, correct: false });
-      }
+      socket.emit('guessedAvatar', { id: socket.id, correct: false });
+    }
+
+    if (players[0].avatar == id) {
+      socket.emit('guessedAvatar', { id: socket.id, correct: true });
+    } else {
+      socket.emit('guessedAvatar', { id: socket.id, correct: false });
     }
   });
 

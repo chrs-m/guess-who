@@ -1,27 +1,27 @@
 import socket from './socket';
 
 const characterImages = [
-  '/assets/img/characters/birgitte.png',
-  '/assets/img/characters/frank.png',
-  '/assets/img/characters/ina.png',
-  '/assets/img/characters/karl.png',
-  '/assets/img/characters/ludo.png',
-  '/assets/img/characters/robert.png',
-  '/assets/img/characters/conrad.png',
-  '/assets/img/characters/georg.png',
-  '/assets/img/characters/hanna.png',
-  '/assets/img/characters/jana.png',
-  '/assets/img/characters/lena.png',
-  '/assets/img/characters/martina.png',
-  '/assets/img/characters/tilman.png',
-  '/assets/img/characters/erika.png',
-  '/assets/img/characters/fabien.png',
-  '/assets/img/characters/hans.png',
-  '/assets/img/characters/jens.png',
-  '/assets/img/characters/lorena.png',
-  '/assets/img/characters/michael.png',
-  '/assets/img/characters/vilma.png',
-  '/assets/img/characters/karsten.png',
+  '/assets/img/characters/Birgitte.png',
+  '/assets/img/characters/Frank.png',
+  '/assets/img/characters/Ina.png',
+  '/assets/img/characters/Karl.png',
+  '/assets/img/characters/Ludo.png',
+  '/assets/img/characters/Robert.png',
+  '/assets/img/characters/Conrad.png',
+  '/assets/img/characters/Georg.png',
+  '/assets/img/characters/Hanna.png',
+  '/assets/img/characters/Jana.png',
+  '/assets/img/characters/Lena.png',
+  '/assets/img/characters/Martina.png',
+  '/assets/img/characters/Tilman.png',
+  '/assets/img/characters/Erika.png',
+  '/assets/img/characters/Fabien.png',
+  '/assets/img/characters/Hans.png',
+  '/assets/img/characters/Jens.png',
+  '/assets/img/characters/Lorena.png',
+  '/assets/img/characters/Michael.png',
+  '/assets/img/characters/Vilma.png',
+  '/assets/img/characters/Karsten.png',
 ];
 const overlay = document.createElement('div');
 overlay.setAttribute('class', 'overlay');
@@ -55,7 +55,7 @@ for (let index = 0; index < characterImages.length; index++) {
 }
 
 document.querySelector('.guessAvatar').innerHTML = `
-<label for="avatar">Guess avatar:</label>
+<label for="avatar">Guess opponent character:</label>
 
 <select name="avatars" id="avatars">
 ${names.map((name, i) => {
@@ -81,6 +81,7 @@ function displayGame(characterID) {
       imgDiv.style.marginLeft = '27.5%';
 
       document.body.appendChild(imgDiv);
+      imgDiv.appendChild(text);
 
       const src = character;
       const choosenCharacter = document.createElement('img');

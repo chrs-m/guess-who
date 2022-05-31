@@ -34,12 +34,15 @@
     <div class="chatContainer">
       <pre id="messages"></pre>
       <input type="text" id="messageBox" placeholder="Type your message here" />
-      <button id="send" title="Send message!">Send message</button>
-      <button type="button" id="turn" name="button">Next Turn</button>
+      <div class="buttons">
+        <button id="send" title="Send message!">Send message</button>
+        <button type="button" id="turn" name="button">Next Turn</button>
+      </div>
+      <div class="guessContainer">
+        <div class="guessAvatar"></div>
+        <button type="button" id="guess" name="button">Guess</button>
+      </div>
     </div>
-
-    <div class="guessAvatar"></div>
-    <button type="button" id="guess" name="button">Guess character</button>
 
     <script type="module">
       import socket from './src/socket';
