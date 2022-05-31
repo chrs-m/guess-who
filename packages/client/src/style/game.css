@@ -135,3 +135,17 @@ script {
   color: white;
   display: none;
 }
+.lostOverlay {
+  width: 65%;
+  height: 70%;
+  background-color: rgba(40, 40, 40, 0.85);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  cursor: default;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  display: none;
+}

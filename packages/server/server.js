@@ -59,15 +59,15 @@ io.on('connection', (socket) => {
 
     if (playerNr + 1 < nrOfPlayers) {
       if (players[playerNr + 1].avatar == id) {
-        socket.emit('guessedAvatar', { id: socket.id, correct: true });
+        io.emit('guessedAvatar', { id: socket.id, correct: true });
       } else {
-        socket.emit('guessedAvatar', { id: socket.id, correct: false });
+        io.emit('guessedAvatar', { id: socket.id, correct: false });
       }
     } else {
       if (players[0].avatar == id) {
-        socket.emit('guessedAvatar', { id: socket.id, correct: true });
+        io.emit('guessedAvatar', { id: socket.id, correct: true });
       } else {
-        socket.emit('guessedAvatar', { id: socket.id, correct: false });
+        io.emit('guessedAvatar', { id: socket.id, correct: false });
       }
     }
   });

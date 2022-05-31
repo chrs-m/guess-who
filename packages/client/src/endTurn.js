@@ -2,6 +2,7 @@ import socket from './socket';
 
 let playerTurn = true;
 const blockBox = document.querySelector('.stopOverlay');
+const lostOverlay = document.querySelector('.lostOverlay');
 const nextTurnBtn = document.querySelector('#turn');
 const guessBtn = document.querySelector('#guess');
 const selectedAvatar = document.querySelector('#avatars');
@@ -21,19 +22,25 @@ if (nextTurnBtn !== null) {
   });
 }
 
+socket.on('guessedAvatar', (data) => {
+  if (data.correct) {
+    if (data.id == player.id) {
+      alert('you won!');
+    } else {
+      lostOverlay.style.display = 'block';
+    }
+
+    // console.log(data.id == player.id ? 'YOU WON :)' : 'YOU LOST :(');
+    // alert('you won!');
+  }
+  if (data.correct === false) {
+    alert('wrong guess!');
+    endTurn();
+  }
+});
+
 guessBtn.addEventListener('click', () => {
   socket.emit('guessAvatar', selectedAvatar.value);
-  socket.on('guessedAvatar', (data) => {
-    console.log(data);
-
-    if (data.correct) {
-      console.log(data.id == player.id ? 'YOU WON :)' : 'YOU LOST :(');
-    }
-    if (data.correct === false) {
-      console.log('wrong guess');
-    }
-  });
-  endTurn();
 });
 
 const endTurn = () => {
@@ -41,8 +48,6 @@ const endTurn = () => {
 };
 
 socket.on('turn', (data) => {
-  // console.log(player);
-
   if (player.id !== data.id) {
     blockBox.classList.add('stopOverlay');
     blockBox.style.display = 'block';

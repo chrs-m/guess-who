@@ -37,7 +37,6 @@ const chat = (() => {
         message: messageBox.value,
         user: user,
       });
-      // console.log(socket.id);
     }
   };
 
