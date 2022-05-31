@@ -13,7 +13,6 @@ io.on('connection', (socket) => {
   let playerId = socket.id;
 
   let playerIndex = players.findIndex((p) => p.id == socket.id);
-  console.log(playerIndex);
 
   if (playerIndex === -1) {
     socket.emit('player', { id: playerId, name: '', avatar: '' });
@@ -33,13 +32,10 @@ io.on('connection', (socket) => {
   //SET USERNAME
   socket.on('setUsername', (name) => {
     playerIndex = players.findIndex((p) => p.id == socket.id);
-    console.log('hej', playerIndex);
 
     players[playerIndex].name = name;
-    console.log('asdf', players[playerIndex]);
 
     socket.emit('player', players[playerIndex]);
-    console.log(players);
   });
 
   //SET AVATAR

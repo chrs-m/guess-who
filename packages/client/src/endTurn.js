@@ -3,6 +3,7 @@ import socket from './socket';
 let playerTurn = true;
 const blockBox = document.querySelector('.stopOverlay');
 const lostOverlay = document.querySelector('.lostOverlay');
+const winOverlay = document.querySelector('.winOverlay');
 const nextTurnBtn = document.querySelector('#turn');
 const guessBtn = document.querySelector('#guess');
 const selectedAvatar = document.querySelector('#avatars');
@@ -25,16 +26,13 @@ if (nextTurnBtn !== null) {
 socket.on('guessedAvatar', (data) => {
   if (data.correct) {
     if (data.id == player.id) {
-      alert('you won!');
+      winOverlay.style.display = 'block';
     } else {
       lostOverlay.style.display = 'block';
     }
-
-    // console.log(data.id == player.id ? 'YOU WON :)' : 'YOU LOST :(');
-    // alert('you won!');
   }
   if (data.correct === false) {
-    alert('wrong guess!');
+    alert('wrong guess');
     endTurn();
   }
 });
