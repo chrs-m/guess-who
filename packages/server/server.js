@@ -10,8 +10,6 @@ const server = http.createServer(express);
 const io = new Server(server, {
   cors: {
     origin: '*',
-    credentials: true,
-    origin: true,
   },
 });
 
