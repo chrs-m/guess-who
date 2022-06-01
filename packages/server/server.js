@@ -29,13 +29,6 @@ io.on('connection', (socket) => {
   socket.on('join room', (data) => {
     console.log('Player joined room', data);
 
-    if (players.length >= 2) {
-      socket.emit('join ok', {
-        ...data,
-        roomId: 2,
-      });
-    }
-
     socket.emit('join ok', {
       ...data,
       roomId: 1,
