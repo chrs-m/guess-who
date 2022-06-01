@@ -2,17 +2,20 @@
 
 # Guess who
 
-A modern take on the classic "Guess who".
+A modest try to make a modern take on the classic "Guess who?"-game. Made with PixiJs and Socket.io.
 
 # Installation
 
 1. Clone the repo
 2. Run 'npm install' in the root folder
-3. Start a localhost by running 'npm start'
-4. Test function by using two browsers, one being in incognito mode.
+    - Run 'npm install' in packages/client and packages/server.
+3. Start a localhost by running 'npm start' from root.
+4. Test game by using two browsers, one being in incognito mode.
 
 # Changelog
 
+-   [#12 - Update Readme and some server stuff.](https://github.com/chrs-m/guess-who/pull/12)
+-   [#11 - Deploy stuff.](https://github.com/chrs-m/guess-who/pull/11)
 -   [#10 - Guess logic + visual updates.](https://github.com/chrs-m/guess-who/pull/10)
 -   [#9 - Fix issues when merging to one file.](https://github.com/chrs-m/guess-who/pull/9)
 -   [#8 - Choose character.](https://github.com/chrs-m/guess-who/pull/8)
@@ -32,14 +35,14 @@ A modern take on the classic "Guess who".
 
 Tested by the following people:
 
-1. Jane Doe
-2. John Doe
-3. Jane Doe
-4. John Doe
+1. Theo
+2. Patrik
+3. Neo
+4. Erik
 
 Tested by the following muggles (non-coders):
 
-1. Jane Doe
-2. John Doe
-3. Jane Doe
-4. John Doe
+1. Johanna
+2. Filiph
+3. Andreas
+4. Carro
