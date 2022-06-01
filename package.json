@@ -2,17 +2,23 @@
   "name": "guess-who",
   "private": true,
   "version": "0.0.0",
+  "engines": {
+    "node": "17.6.0"
+  },
   "scripts": {
-    "start": "concurrently \"cd packages/server && npm start\" \"cd packages/client && npm run dev\""
+    "start": "node packages/server/server.js --no-clear --host"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chrs-m/guess-who.git"
   },
-  "devDependencies": {
-    "vite": "^2.9.5"
-  },
   "dependencies": {
-    "concurrently": "^7.1.0"
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "path": "^0.12.7",
+    "socket-controllers": "^0.0.5",
+    "socket.io": "^4.5.0",
+    "ws": "^8.6.0"
   }
 }

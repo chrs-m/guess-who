@@ -1,12 +1,16 @@
 import express from 'express';
 import http from 'http';
 import { Server, Socket } from 'socket.io';
+import cors from 'cors';
 
 const port = process.env.PORT || 3005;
+
 const server = http.createServer(express);
 
 const io = new Server(server, {
-  cors: { origin: 'https://vem-dar.herokuapp.com/' },
+  cors: {
+    origin: '*',
+  },
 });
 
 let players = [];
