@@ -33,7 +33,7 @@ socket.on('guessedAvatar', (data) => {
   }
   if (data.correct === false) {
     endTurn();
-    alert('wrong guess');
+    // alert('wrong guess');
   }
 });
 
