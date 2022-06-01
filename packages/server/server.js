@@ -6,7 +6,7 @@ const port = process.env.PORT || 3005;
 const server = http.createServer(express);
 
 const io = new Server(server, {
-  cors: { origin: 'https://guess-who-yrgo.herokuapp.com/' },
+  cors: { origin: 'https://vem-dar.herokuapp.com/' },
 });
 
 let players = [];
