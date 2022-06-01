@@ -32,8 +32,8 @@ socket.on('guessedAvatar', (data) => {
     }
   }
   if (data.correct === false) {
-    alert('wrong guess');
     endTurn();
+    alert('wrong guess');
   }
 });
 
