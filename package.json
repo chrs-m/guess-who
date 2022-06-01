@@ -2,6 +2,9 @@
   "name": "guess-who",
   "private": true,
   "version": "0.0.0",
+  "engines": {
+    "node": "12.11.1"
+  },
   "scripts": {
     "start": "concurrently \"cd packages/server && npm start\" \"cd packages/client && npm run dev\""
   },
