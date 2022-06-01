@@ -14,6 +14,7 @@ A modest try to make a modern take on the classic "Guess who?"-game. Made with P
 
 # Changelog
 
+
 -   [#13 - More deploy stuff.](https://github.com/chrs-m/guess-who/pull/13)
 -   [#12 - Update Readme and some server stuff.](https://github.com/chrs-m/guess-who/pull/12)
 -   [#11 - Deploy stuff.](https://github.com/chrs-m/guess-who/pull/11)

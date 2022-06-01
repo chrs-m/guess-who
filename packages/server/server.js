@@ -5,7 +5,9 @@ import { Server, Socket } from 'socket.io';
 const port = process.env.PORT || 3005;
 const server = http.createServer(express);
 
-const io = new Server(server, { cors: { origin: '*' } });
+const io = new Server(server, {
+  cors: { origin: 'https://tranquil-badlands-99002.herokuapp.com/' },
+});
 
 let players = [];
 
