@@ -6,19 +6,23 @@
     "node": "17.6.0"
   },
   "scripts": {
-    "start": "node packages/server/server.js --no-clear --host"
+    "start": "cd packages/client && npm run dev",
+    "build": "cd packages/client && vite build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chrs-m/guess-who.git"
   },
   "dependencies": {
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "express": "^4.18.1",
-    "path": "^0.12.7",
-    "socket-controllers": "^0.0.5",
-    "socket.io": "^4.5.0",
+    "concurrently": "^7.2.1",
+    "@pixi/layers": "^1.0.11",
+    "core-js": "^3.20.3",
+    "pixi-spine": "^3.0.13",
+    "pixi.js": "^6.3.0",
+    "socket.io-client": "^4.5.0",
     "ws": "^8.6.0"
+  },
+  "devDependencies": {
+    "vite": "^2.9.9"
   }
 }
