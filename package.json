@@ -1,9 +1,13 @@
 {
-  "name": "vite",
+  "name": "guess-who",
   "private": true,
   "version": "0.0.0",
   "scripts": {
     "start": "concurrently \"cd packages/server && npm start\" \"cd packages/client && npm run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrs-m/guess-who.git"
   },
   "devDependencies": {
     "vite": "^2.9.5"
